@@ -1,0 +1,4 @@
+email,password,role,name
+manager@example.com,<hashed_password>,manager,John Manager
+employee1@example.com,<hashed_password>,employee,Alice Employee
+employee2@example.com,<hashed_password>,employee,Bob Employee

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Login - Learning Portal{% endblock %}
+
+{% block content %}
+    <div class="form-container">
+        <h2>Login to Learning Portal</h2>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+        <form method="POST">
+            <div class="input-container">
+                <input type="email" name="email" required>
+                <label>Email</label>
+            </div>
+            <div class="input-container">
+                <input type="password" name="password" required>
+                <label>Password</label>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+{% endblock %}
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">-->
+<!--    <title>Login</title>-->
+<!--</head>-->
+<!--<body style="background-image: url('mountain_background.jpg');">-->
+<!--    <div class="login-container">-->
+<!--        <h1>Login</h1>-->
+<!--        <form action="login.php" method="post">-->
+<!--            <input type="text" name="username" placeholder="Email" required>-->
+<!--            <input type="password" name="password" placeholder="Password" required>-->
+<!--            <label><input type="checkbox" name="remember"> Remember me</label>-->
+<!--            <button type="submit">Log In</button>-->
+<!--        </form>-->
+<!--        <a href="#">Forgot password?</a>-->
+<!--        <p>Don't have an account? <a href="#">Register</a></p>-->
+<!--    </div>-->
+<!--</body>-->
+<!--</html>-->

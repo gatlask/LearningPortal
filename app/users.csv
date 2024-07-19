@@ -1,0 +1,2 @@
+email,password,role,name
+manager@example.com,scrypt:32768:8:1$fRHAcBhrQ3mR1Vv4$634aff766d02201cfab4d3a4fc75fbec81e6cad6c832e2171869cdd88c1f33cd5a19f0db051f55b85589cf6ad9f0706c36eb503e4becf9e9ec583d5e5ca57b4e,manager,John Manager

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Course List - Learning Portal{% endblock %}
+
+{% block content %}
+    <div class="course-container">
+        <h2>Available Courses</h2>
+        <ul class="course-list">
+            {% for id, course in courses.items() %}
+                <li>
+                    <strong>{{ course.name }}</strong>
+                    <br>Enrolled: {{ course.assigned_to|length }}/2
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

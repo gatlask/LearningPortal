@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Manager Dashboard - Learning Portal{% endblock %}
+
+{% block content %}
+    <div class="dashboard-container">
+        <h2>Welcome to your Manager Dashboard, {{ user }}!</h2>
+        <h3>Course Management</h3>
+        <form action="{{ url_for('add_course') }}" method="post" class="inline-form">
+            <input type="text" name="course_name" placeholder="New Course Name" required>
+            <button type="submit">Add Course</button>
+        </form>
+        <h3>Assign Courses</h3>
+        <form action="{{ url_for('assign_course') }}" method="post" class="inline-form">
+            <select name="course_id" required>
+                {% for id, course in courses.items() %}
+                    <option value="{{ id }}">{{ course.name }}</option>
+                {% endfor %}
+            </select>
+            <select name="employee_name" required>
+                {% for email, data in users.items() %}
+                    {% if data.role == 'employee' %}
+                        <option value="{{ data.name }}">{{ data.name }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            <button type="submit">Assign Course</button>
+        </form>
+        <h3>Current Courses</h3>
+        <ul class="course-list">
+            {% for id, course in courses.items() %}
+                <li>
+                    <strong>{{ course.name }}</strong>
+                    <br>Assigned to: {{ ', '.join(course.assigned_to) if course.assigned_to else 'None' }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
